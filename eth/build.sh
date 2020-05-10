@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo docker build -t sirhill/node-eth .
+sudo docker build -t ntity/sidechain .
 
