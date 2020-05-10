@@ -24,5 +24,5 @@ services:
       internalnet:
         ipv4_address: 172.21.1.2
     environment:
-      - NETWORK_ID=20200507
+      - NETWORK_ID=20200509990
       - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0xbf518cd53a0badf3ce00f78fd268d47fb7cb78c8 --password /ethereum/password.txt --mine --minerthreads=1 --maxpeers=0
