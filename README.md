@@ -3,8 +3,8 @@ Nodes configuration
 
 ## Network covered
 
-* Bitcoin - BTC
-* Ethereum - ETH
-* Ethereum2 - ETH
-* Rootstock - RSK
+* Ntity sidechain - eth 
+
+
+* Ethereum2 - eth2
 
