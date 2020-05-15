@@ -8,7 +8,7 @@ networks:
         - subnet: 172.21.1.0/16
 services:
   ntity-01:
-    image: ntity-core/node-eth
+    image: ntity/blockchain
     restart: on-failure
     container_name: ntity-01
     hostname: ntity-01
@@ -24,5 +24,5 @@ services:
       internalnet:
         ipv4_address: 172.21.1.2
     environment:
-      - NETWORK_ID=20200509990
+      - NETWORK_ID=197710212030
       - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0xbf518cd53a0badf3ce00f78fd268d47fb7cb78c8 --password /ethereum/password.txt --mine --minerthreads=1 --maxpeers=0
