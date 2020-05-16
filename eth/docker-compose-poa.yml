@@ -25,4 +25,4 @@ services:
         ipv4_address: 172.21.1.2
     environment:
       - NETWORK_ID=197710212030
-      - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0xbf518cd53a0badf3ce00f78fd268d47fb7cb78c8 --password /blockchain/password.txt --mine --minerthreads=1 --maxpeers=0
+      - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0xf41f937875d06b2f3c569bde199c6cfd3a64c47c --password /blockchain/password.txt --mine --minerthreads=1 --maxpeers=0
