@@ -13,4 +13,5 @@ sudo cp nodes/eth/static-nodes.json /data/blockchain/ntity-01/
 
 sudo groupadd docker
 sudo service docker start
+sudo docker run -it ntity/blockchain /bin/bash
 sudo docker-compose -f ~/nodes/eth/docker-compose-ntity.yml start

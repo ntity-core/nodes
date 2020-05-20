@@ -8,7 +8,7 @@ networks:
         - subnet: 172.21.1.0/16
 services:
   ntity-01:
-    image: ntity/sidechain
+    image: ntity/blockchain
     restart: on-failure
     container_name: ntity-01
     hostname: ntity-01
