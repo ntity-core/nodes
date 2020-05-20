@@ -1,0 +1,78 @@
+version: "3"
+
+networks:
+  internalnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.1.0/16
+services:
+  ntity-01:
+    image: ntity/sidechain
+    restart: on-failure
+    container_name: ntity-01
+    hostname: ntity-01
+    volumes:
+      - /data/blockchain/ntity-01:/blockchain
+      - /data/blockchain/password.txt:/blockchain/password.txt
+      - /data/blockchain/static-nodes.json:/blockchain/static-nodes.json
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+      - "30303:30303"
+      - "30303:30303/udp"
+    networks:
+      internalnet:
+        ipv4_address: 172.21.1.2
+    environment:
+      - NETWORK_ID=197710212030
+      - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0xad3d0456d8308c3d9fa4b6fcb72d532e6f08702d --password /blockchain/password.txt --mine --minerthreads=1 --maxpeers=0
+      - DATA_DIR=/blockchain
+      - FREEZER_DIR=/blockchain/freezer
+  ntity-02:
+    image: ntity/sidechain
+    restart: on-failure
+    container_name: ntity-02
+    hostname: ntity-02
+    volumes:
+      - /data/blockchain/ntity-02:/blockchain
+      - /data/blockchain/password.txt:/blockchain/password.txt
+      - /data/blockchain/static-nodes.json:/blockchain/static-nodes.json
+    expose:
+      - "8545"
+      - "8546"
+    ports:
+      - "30304:30303"
+      - "30304:30303/udp"
+    networks:
+      internalnet:
+        ipv4_address: 172.21.1.3
+    environment:
+      - NETWORK_ID=197710212030
+      - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0x77ee5ed7989b7012ee1c8261954ce622ef3c886f --password /blockchain/password.txt --mine --minerthreads=1 --maxpeers=0
+      - DATA_DIR=/blockchain
+      - FREEZER_DIR=/blockchain/freezer
+  ntity-03:
+    image: ntity/sidechain
+    restart: on-failure
+    container_name: ntity-03
+    hostname: ntity-03
+    volumes:
+      - /data/blockchain/ntity-03:/blockchain
+      - /data/blockchain/password.txt:/blockchain/password.txt
+      - /data/blockchain/static-nodes.json:/blockchain/static-nodes.json
+    expose:      
+      - "8545"
+      - "8546"
+    ports:
+      - "30305:30303"
+      - "30305:30303/udp"
+    networks:
+      internalnet:
+        ipv4_address: 172.21.1.4
+    environment:
+      - NETWORK_ID=197710212030
+      - GETH_OPTS=--nodiscover --miner.gasprice=1 --allow-insecure-unlock --unlock=0x54cb3f9d75b726a91f15e033edfe445b1bb85c9f --password /blockchain/password.txt --mine --minerthreads=1 --maxpeers=0
+      - DATA_DIR=/blockchain
+      - FREEZER_DIR=/blockchain/freezer
+
