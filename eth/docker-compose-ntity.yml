@@ -16,7 +16,7 @@ services:
       - /data/blockchain/ntity-01:/blockchain
       - /data/blockchain/password.txt:/blockchain/password.txt
       - /data/blockchain/static-nodes.json:/blockchain/static-nodes.json
-      - /data/blockchain/ntity2020-genesis.json:/blockchain/ntity.genesis.json
+      - /data/blockchain/ntity.genesis.json:/blockchain/ntity.genesis.json
     ports:
       - "8545:8545"
       - "8546:8546"
