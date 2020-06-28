@@ -9,8 +9,8 @@ sudo mkdir -p /data/blockchain/ntity-01
 
 cd
 git clone https://github.com/ntity-core/nodes
-sudo cp nodes/eth/ntity.genesis.json /data/blockchain/ntity-01/
-sudo cp nodes/eth/static-nodes.json /data/blockchain/ntity-01/
+sudo cp ~/nodes/eth/ntity.genesis.json /data/blockchain/
+sudo cp ~/nodes/eth/static-nodes.json /data/blockchain/
 
 sudo groupadd docker
 sudo systemctl start docker
